@@ -110,8 +110,7 @@ Follow these steps to get the application up and running on your local machine:
 - **Order Placement:**
   ![Screenshot of Order Placement](path/to/your/order-screenshot.png)
 
-- **Admin Panel (if applicable):**
-  ![Screenshot of Admin Panel](path/to/your/admin-screenshot.png)
+
 
 ## Further Development
 
