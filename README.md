@@ -35,7 +35,7 @@ This system provides the following core functionalities:
 ## Technology Stack
 
 - **Frontend:** HTML5, CSS3, JavaScript (Vanilla JS)
-- **Backend:** Node.js, Express.js
+- **Backend:** Node.js
 - **Database:** MongoDB
 - **Libraries:**
   - `cors`: For enabling Cross-Origin Resource Sharing.
