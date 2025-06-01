@@ -132,4 +132,4 @@ Contributions are welcome! If you'd like to contribute, please fork the reposito
 
 ## License
 
-This project is open-source and available under the [MIT License](LICENSE). (You might need to create a `LICENSE` file in your root directory if you don't have one.)
+This project is open-source and available under the [MIT License](LICENSE).
