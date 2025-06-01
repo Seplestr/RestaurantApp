@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Menu & Order Management</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <h1>Restaurant Control Panel</h1>
+    </header>
+
+    <main class="container">
+        <section id="menu-management" class="card">
+            <h2>Menu Management</h2>
+            <div id="menu-items-container" class="items-grid">
+                <!-- Menu items will be loaded here by script.js -->
+            </div>
+            
+            <div class="form-container">
+                <h3>Add / Update Menu Item</h3>
+                <form id="add-menu-item-form">
+                    <div class="form-group">
+                        <label for="itemName">Name:</label>
+                        <input type="text" id="itemName" name="itemName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="itemCategory">Category:</label>
+                        <input type="text" id="itemCategory" name="itemCategory" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="itemPrice">Price (₹):</label>
+                        <input type="number" id="itemPrice" name="itemPrice" step="0.01" min="0" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="itemIngredients">Ingredients (comma-separated):</label>
+                        <input type="text" id="itemIngredients" name="itemIngredients">
+                    </div>
+                    <div class="form-group">
+                        <label for="itemTags">Tags (comma-separated, e.g., vegan, spicy):</label>
+                        <input type="text" id="itemTags" name="itemTags">
+                    </div>
+                    <div class="form-group form-group-checkbox">
+                        <input type="checkbox" id="itemAvailability" name="itemAvailability" checked>
+                        <label for="itemAvailability">Available</label>
+                    </div>
+                    <button type="submit" id="submit-menu-item-button">Add Item</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="order-management" class="card">
+            <h2>Order Management</h2>
+            <div id="create-order-section">
+                <h3>Create New Order</h3>
+                <div class="order-creation-area">
+                    <div id="available-menu-items-for-order" class="menu-selection-panel">
+                        <h4>Available Menu Items</h4>
+                        <div id="menu-items-list-for-order" class="items-grid">
+                            <!-- Menu items available for ordering will be loaded here by script.js -->
+                        </div>
+                    </div>
+                    <div id="current-order-cart" class="cart-panel">
+                        <h4>Your Order</h4>
+                        <div id="cart-items-list">
+                            <!-- Items added to the cart will be displayed here by script.js -->
+                        </div>
+                        <p class="cart-total-display">Total: <span id="cart-total">₹0.00</span></p>
+                        <div class="form-group">
+                            <label for="orderNotes">Notes (e.g., extra spicy, no onions):</label>
+                            <textarea id="orderNotes" name="orderNotes" rows="3"></textarea>
+                        </div>
+                        <button id="place-order-button" class="primary-action">Place Order</button>
+                    </div>
+                </div>
+
+                <!-- Section for displaying existing orders -->
+                <div class="card" id="existing-orders-section">
+                    <h2>Existing Orders</h2>
+                    <div id="orders-list-container">
+                        <!-- Orders will be dynamically loaded here -->
+                        <p>Loading orders...</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+        <p>&copy; <span id="currentYear"></span> Restaurant App. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

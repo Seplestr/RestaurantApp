@@ -1,0 +1,453 @@
+:root {
+    --primary-color: #ff6347; /* Tomato */
+    --secondary-color: #4682b4; /* SteelBlue */
+    --light-gray: #f8f9fa;
+    --medium-gray: #e9ecef;
+    --dark-gray: #343a40;
+    --text-color: #212529;
+    --white: #ffffff;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --warning-color: #ffc107;
+    --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --border-radius: 0.3rem;
+}
+
+body {
+    font-family: var(--font-family-sans-serif);
+    margin: 0;
+    background-color: var(--light-gray);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 1.5rem 1rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+main {
+    padding: 1.5rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+    display: grid;
+    gap: 2rem;
+}
+
+section {
+    background-color: var(--white);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+section h2 {
+    color: var(--primary-color);
+    margin-top: 0;
+    border-bottom: 2px solid var(--medium-gray);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+section h3 {
+    color: var(--secondary-color);
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+section h4 {
+    color: var(--dark-gray);
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Form Styling */
+form div {
+    margin-bottom: 1rem;
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+    color: var(--dark-gray);
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="email"],
+form input[type="password"],
+form textarea {
+    width: calc(100% - 22px); /* Account for padding and border */
+    padding: 0.75rem;
+    border: 1px solid var(--medium-gray);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+form input[type="text"]:focus,
+form input[type="number"]:focus,
+form input[type="email"]:focus,
+form input[type="password"]:focus,
+form textarea:focus {
+    border-color: var(--primary-color);
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(255, 99, 71, 0.25);
+}
+
+form input[type="checkbox"] {
+    margin-right: 0.5rem;
+    vertical-align: middle;
+}
+
+/* Button Styling */
+button, input[type="submit"] {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.15s ease-in-out;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: #e05238; /* Darker Tomato */
+}
+
+button.secondary {
+    background-color: var(--secondary-color);
+}
+
+button.secondary:hover {
+    background-color: #3a6a94; /* Darker SteelBlue */
+}
+
+button.danger {
+    background-color: var(--danger-color);
+}
+
+button.danger:hover {
+    background-color: #c82333; /* Darker Danger */
+}
+
+/* Menu Item Styling */
+#menu-items-container .menu-item,
+#menu-items-list-for-order .menu-item-order {
+    border: 1px solid var(--medium-gray);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: var(--border-radius);
+    background-color: var(--white);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+}
+
+#menu-items-container .menu-item h4,
+#menu-items-list-for-order .menu-item-order h5 {
+    margin-top: 0;
+    color: var(--secondary-color);
+}
+
+#menu-items-container .menu-item p,
+#menu-items-list-for-order .menu-item-order p {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+#menu-items-container .menu-item .actions button,
+#menu-items-list-for-order .menu-item-order button {
+    margin-right: 0.5rem;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+}
+
+/* Order Management Specifics */
+.order-creation-area {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+#current-order-cart {
+    background-color: var(--light-gray);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--medium-gray);
+}
+
+#cart-items-list .cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed var(--medium-gray);
+}
+
+#cart-items-list .cart-item:last-child {
+    border-bottom: none;
+}
+
+#cart-total {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+#place-order-button {
+    width: 100%;
+    margin-top: 1rem;
+    background-color: var(--success-color);
+}
+
+#place-order-button:hover {
+    background-color: #218838; /* Darker Success */
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    background-color: var(--dark-gray);
+    color: var(--white);
+    margin-top: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .order-creation-area {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    main {
+        padding: 1rem;
+        margin: 1rem auto;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    form input[type="text"],
+    form input[type="number"],
+    form input[type="email"],
+    form input[type="password"],
+    form textarea {
+        padding: 0.6rem;
+        font-size: 0.9rem;
+    }
+
+    button, input[type="submit"] {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    section {
+        padding: 1rem;
+    }
+
+    header {
+        padding: 1rem;
+    }
+
+    #menu-items-container .menu-item .actions button,
+    #menu-items-list-for-order .menu-item-order button {
+        display: block;
+        width: calc(100% - 1.6rem); /* Full width buttons on small screens */
+        margin-bottom: 0.5rem;
+    }
+
+    #menu-items-container .menu-item .actions button:last-child,
+    #menu-items-list-for-order .menu-item-order button:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.menu-item-for-order {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.menu-item-for-order span {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+/* Order Item Styling */
+.order-item {
+    background-color: var(--color-background-light);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-medium);
+    margin-bottom: var(--spacing-medium);
+    box-shadow: var(--box-shadow);
+}
+
+.order-item h4 {
+    margin-top: 0;
+    margin-bottom: var(--spacing-small);
+    color: var(--color-primary);
+}
+
+.order-item p {
+    margin-bottom: var(--spacing-extra-small);
+    font-size: 0.9em;
+}
+
+.order-item strong {
+    color: var(--color-accent);
+}
+
+.order-items-list {
+    margin-top: var(--spacing-small);
+    padding-top: var(--spacing-small);
+    border-top: 1px dashed var(--color-border);
+}
+
+.order-items-list p {
+    margin-bottom: var(--spacing-extra-small);
+    font-size: 0.85em;
+    color: var(--color-text-secondary);
+}
+
+#menu-items-container .menu-item .actions button,
+#menu-items-list-for-order .menu-item-order button {
+    margin-right: 0.5rem;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+}
+
+/* Order Management Specifics */
+.order-creation-area {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+#current-order-cart {
+    background-color: var(--light-gray);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--medium-gray);
+}
+
+#cart-items-list .cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed var(--medium-gray);
+}
+
+#cart-items-list .cart-item:last-child {
+    border-bottom: none;
+}
+
+#cart-total {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+#place-order-button {
+    width: 100%;
+    margin-top: 1rem;
+    background-color: var(--success-color);
+}
+
+#place-order-button:hover {
+    background-color: #218838; /* Darker Success */
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    background-color: var(--dark-gray);
+    color: var(--white);
+    margin-top: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .order-creation-area {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    main {
+        padding: 1rem;
+        margin: 1rem auto;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    form input[type="text"],
+    form input[type="number"],
+    form input[type="email"],
+    form input[type="password"],
+    form textarea {
+        padding: 0.6rem;
+        font-size: 0.9rem;
+    }
+
+    button, input[type="submit"] {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    section {
+        padding: 1rem;
+    }
+
+    header {
+        padding: 1rem;
+    }
+
+    #menu-items-container .menu-item .actions button,
+    #menu-items-list-for-order .menu-item-order button {
+        display: block;
+        width: calc(100% - 1.6rem); /* Full width buttons on small screens */
+        margin-bottom: 0.5rem;
+    }
+
+    #menu-items-container .menu-item .actions button:last-child,
+    #menu-items-list-for-order .menu-item-order button:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.menu-item-for-order {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.menu-item-for-order span {
+    flex-grow: 1;
+    margin-right: 10px;
+}
